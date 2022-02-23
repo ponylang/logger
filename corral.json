@@ -1,0 +1,14 @@
+{
+  "packages": [
+    "logger"
+  ],
+  "deps": [],
+  "info": {
+    "description": "A simple logging library for Pony",
+    "homepage": "https://github.com/ponylang/logger",
+    "license": "BSD-2-Clause",
+    "documentation_url": "https://ponylang.github.io/logger/",
+    "version": "0.0.0",
+    "name": "logger"
+  }
+}
