@@ -2,62 +2,62 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://ponylang.github.io/logger/</loc>
-         <lastmod>2022-02-23</lastmod>
+         <lastmod>2022-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ponylang.github.io/logger/logger--index/</loc>
-         <lastmod>2022-02-23</lastmod>
+         <lastmod>2022-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ponylang.github.io/logger/logger-DefaultLogFormatter/</loc>
-         <lastmod>2022-02-23</lastmod>
+         <lastmod>2022-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ponylang.github.io/logger/logger-Error/</loc>
-         <lastmod>2022-02-23</lastmod>
+         <lastmod>2022-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ponylang.github.io/logger/logger-Fine/</loc>
-         <lastmod>2022-02-23</lastmod>
+         <lastmod>2022-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ponylang.github.io/logger/logger-Info/</loc>
-         <lastmod>2022-02-23</lastmod>
+         <lastmod>2022-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ponylang.github.io/logger/logger-LogFormatter/</loc>
-         <lastmod>2022-02-23</lastmod>
+         <lastmod>2022-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ponylang.github.io/logger/logger-LogLevel/</loc>
-         <lastmod>2022-02-23</lastmod>
+         <lastmod>2022-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ponylang.github.io/logger/logger-Logger/</loc>
-         <lastmod>2022-02-23</lastmod>
+         <lastmod>2022-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ponylang.github.io/logger/logger-StringLogger/</loc>
-         <lastmod>2022-02-23</lastmod>
+         <lastmod>2022-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ponylang.github.io/logger/logger-Warn/</loc>
-         <lastmod>2022-02-23</lastmod>
+         <lastmod>2022-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ponylang.github.io/logger/src/logger/logger/</loc>
-         <lastmod>2022-02-23</lastmod>
+         <lastmod>2022-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
