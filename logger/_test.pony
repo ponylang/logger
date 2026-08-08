@@ -1,5 +1,4 @@
 use "pony_test"
-use "promises"
 
 actor \nodoc\ Main is TestList
   new create(env: Env) => PonyTest(env, this)
@@ -90,79 +89,3 @@ class \nodoc\ _TestObjectLogging is _LoggerTest[U64]
 
   fun log(logger': Logger[U64]) =>
     logger'(Error) and logger'.log(U64(42))
-
-primitive \nodoc\ _TestFormatter is LogFormatter
-  fun apply(msg: String, loc: SourceLoc): String =>
-    msg + "\n"
-
-actor \nodoc\ _TestStream is OutStream
-  let _output: String ref = String
-  let _h: TestHelper
-  let _promise: Promise[String]
-
-  new create(h: TestHelper, promise: Promise[String]) =>
-    _h = h
-    _promise = promise
-
-  be print(data: ByteSeq) =>
-    _collect(data)
-
-  be write(data: ByteSeq) =>
-    _collect(data)
-
-  be printv(data: ByteSeqIter) =>
-    for bytes in data.values() do
-      _collect(bytes)
-    end
-
-  be writev(data: ByteSeqIter) =>
-    for bytes in data.values() do
-      _collect(bytes)
-    end
-
-  be flush() => None
-
-  fun ref _collect(data: ByteSeq) =>
-    _output.append(data)
-
-  be logged() =>
-    let s: String = _output.clone()
-    _promise(s)
-
-trait \nodoc\ _LoggerTest[A] is UnitTest
-  fun apply(h: TestHelper) =>
-    let promise = Promise[String]
-    promise.next[None](recover this~_fulfill(h) end)
-
-    let stream = _TestStream(h, promise)
-
-    log(logger(level(), stream, _TestFormatter))
-
-    stream.logged()
-    h.long_test(2_000_000_000) // 2 second timeout
-
-  fun tag _fulfill(h: TestHelper, value: String) =>
-    h.assert_eq[String](value, expected())
-    h.complete(true)
-
-  fun timed_out(h: TestHelper) =>
-    h.complete(false)
-
-  fun logger(level': LogLevel,
-    stream': OutStream,
-    formatter': LogFormatter): Logger[A]
-
-  fun level(): LogLevel
-
-  fun tag expected(): String
-
-  fun log(logger': Logger[A])
-
-trait \nodoc\ _StringLoggerTest is _LoggerTest[String]
-  fun logger(
-    level': LogLevel,
-    stream': OutStream,
-    formatter': LogFormatter)
-    : Logger[String]
-  =>
-    StringLogger(level', stream', formatter')
