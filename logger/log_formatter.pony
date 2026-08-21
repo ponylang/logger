@@ -24,11 +24,11 @@ primitive DefaultLogFormatter is LogFormatter
     let file_linenum: String  = loc.line().string()
     let file_linepos: String  = loc.pos().string()
 
-    (recover String(file_name.size()
-      + file_linenum.size()
-      + file_linepos.size()
-      + msg.size()
-      + 4)
+    (recover String(file_name.size() +
+      file_linenum.size() +
+      file_linepos.size() +
+      msg.size() +
+      4)
     end)
       .> append(file_name)
       .> append(":")
