@@ -10,7 +10,7 @@ Logger is ready for production use
 
 * Requires ponyc 0.77.0 or later.
 * Install [corral](https://github.com/ponylang/corral)
-* `corral add github.com/ponylang/logger.git --version 1.0.1`
+* `corral add github.com/ponylang/logger.git --version 2.0.0`
 * `corral fetch` to fetch your dependencies
 * `use "logger"` to include this package
 * `corral run -- ponyc` to compile your application
