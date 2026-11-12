@@ -20,8 +20,8 @@ class \nodoc\ iso _TestError is _StringLoggerTest
   fun tag expected(): String =>
     "error message\n"
 
-  fun log(logger': Logger[String]) =>
-    logger'(Error) and logger'.log("error message")
+  fun log(h: TestHelper, logger': Logger[String]) =>
+    logger'(Error) and h.assert_true(logger'.log("error message"))
     logger'(Warn) and logger'.log("warn message")
     logger'(Info) and logger'.log("info message")
     logger'(Fine) and logger'.log("fine message")
@@ -34,9 +34,9 @@ class \nodoc\ iso _TestWarn is _StringLoggerTest
   fun tag expected(): String =>
     "error message\nwarn message\n"
 
-  fun log(logger': Logger[String]) =>
-    logger'(Error) and logger'.log("error message")
-    logger'(Warn) and logger'.log("warn message")
+  fun log(h: TestHelper, logger': Logger[String]) =>
+    logger'(Error) and h.assert_true(logger'.log("error message"))
+    logger'(Warn) and h.assert_true(logger'.log("warn message"))
     logger'(Info) and logger'.log("info message")
     logger'(Fine) and logger'.log("fine message")
 
@@ -48,10 +48,10 @@ class \nodoc\ iso _TestInfo is _StringLoggerTest
   fun tag expected(): String =>
     "error message\nwarn message\ninfo message\n"
 
-  fun log(logger': Logger[String]) =>
-    logger'(Error) and logger'.log("error message")
-    logger'(Warn) and logger'.log("warn message")
-    logger'(Info) and logger'.log("info message")
+  fun log(h: TestHelper, logger': Logger[String]) =>
+    logger'(Error) and h.assert_true(logger'.log("error message"))
+    logger'(Warn) and h.assert_true(logger'.log("warn message"))
+    logger'(Info) and h.assert_true(logger'.log("info message"))
     logger'(Fine) and logger'.log("fine message")
 
 class \nodoc\ iso _TestFine is _StringLoggerTest
@@ -62,11 +62,11 @@ class \nodoc\ iso _TestFine is _StringLoggerTest
   fun tag expected(): String =>
     "error message\nwarn message\ninfo message\nfine message\n"
 
-  fun log(logger': Logger[String]) =>
-    logger'(Error) and logger'.log("error message")
-    logger'(Warn) and logger'.log("warn message")
-    logger'(Info) and logger'.log("info message")
-    logger'(Fine) and logger'.log("fine message")
+  fun log(h: TestHelper, logger': Logger[String]) =>
+    logger'(Error) and h.assert_true(logger'.log("error message"))
+    logger'(Warn) and h.assert_true(logger'.log("warn message"))
+    logger'(Info) and h.assert_true(logger'.log("info message"))
+    logger'(Fine) and h.assert_true(logger'.log("fine message"))
 
 class \nodoc\ _TestObjectLogging is _LoggerTest[U64]
   fun name(): String => "logger/object"
@@ -87,5 +87,5 @@ class \nodoc\ _TestObjectLogging is _LoggerTest[U64]
 
   fun tag expected(): String => "42\n"
 
-  fun log(logger': Logger[U64]) =>
-    logger'(Error) and logger'.log(U64(42))
+  fun log(h: TestHelper, logger': Logger[U64]) =>
+    logger'(Error) and h.assert_true(logger'.log(U64(42)))
