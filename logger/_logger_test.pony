@@ -8,7 +8,7 @@ trait \nodoc\ _LoggerTest[A] is UnitTest
 
     let stream = _TestStream(h, promise)
 
-    log(logger(level(), stream, _TestFormatter))
+    log(h, logger(level(), stream, _TestFormatter))
 
     stream.logged()
     h.long_test(2_000_000_000) // 2 second timeout
@@ -28,4 +28,4 @@ trait \nodoc\ _LoggerTest[A] is UnitTest
 
   fun tag expected(): String
 
-  fun log(logger': Logger[A])
+  fun log(h: TestHelper, logger': Logger[A])
